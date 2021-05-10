@@ -13,12 +13,13 @@ with open('Naive Algo/test1.txt') as file:
         a = []
 # print(arr)
 s = set()
-for i in range(len(arr)):
-    for j in range(len(arr)):
-        if j == start - 1 and arr[i][j] == 1:
-            s.add(i + 1)
-        if j == end - 1 and arr[i][j] == 1:
-            s.add(i + 1)
+for st in range(start, end+1):
+    for i in range(len(arr)):
+        for j in range(len(arr)):
+            if j == st - 1 and arr[i][j] == 1:
+                s.add(i + 1)
+            #if j == end - 1 and arr[i][j] == 1:
+                #s.add(i + 1)
 print(s) # Gr
 
 s1 = set()
