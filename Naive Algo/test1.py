@@ -15,7 +15,7 @@ with open('Naive Algo/test1.txt') as file:
 s = set()
 for st in range(start, end+1):
     for i in range(len(arr)):
-        for j in range(len(arr)):
+        for j in range(len(arr[i])):
             if j == st - 1 and arr[i][j] == 1:
                 s.add(i + 1)
             #if j == end - 1 and arr[i][j] == 1:
@@ -28,7 +28,7 @@ k = 0
 ans = 0
 for r in range(start):
     for i in range(len(arr)):
-        for j in range(len(arr)):
+        for j in range(len(arr[i])):
             if j == r - 1 and arr[i][j] == 1:
                 #print(r,i+1)
                 # k = 0
