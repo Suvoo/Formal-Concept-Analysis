@@ -1,17 +1,18 @@
 # set representation to bit representation and then return answer
 
-a,arr= [],[]
-start,end = 3,4
-with open('Naive Algo\Toycontext(bit)') as file:
+a,arr,temp= [],[],''
+start,end = 68,75
+with open('Naive Algo\Set Representation\mushroomContext') as file:
     for line in file:
         line = line.strip()
-        for c in line:
-            if c != ' ':
-                # print(int(c))
-                a.append(int(c))
-                # print(a)
+        # print(line)
+        new_line = line.replace('\t', ' ')
+        # print(new_line)
+        a = new_line.split(' ')
+        a = [int(i) for i in a]
         arr.append(a)
         a = []
+# print(arr)
 
 rows= arr[-1][0]
 cols=0
@@ -20,11 +21,11 @@ for i in range(len(arr)):
     #print(arr[i][1:])
     cols = max(arr[i][-1],cols)
     arr[i] = arr[i][1:]
-# print(arr)
-# print(rows,cols)
+#print(arr)
+#print(rows,cols)
 
 brr = [[0 for i in range(cols)] for j in range(rows)]
-# print(brr)
+#print(brr)
 for i in range(len(arr)):
     for j in range(len(arr[i])):
         # t = arr[i][j]
@@ -32,7 +33,6 @@ for i in range(len(arr)):
         # print(i,arr[i][j]-1)
         brr[i][arr[i][j] - 1] = 1
     # print(brr[i])
-# print(brr) # bit representation now their
 
 s = set()
 for st in range(start, end+1):

@@ -1,7 +1,7 @@
 # To Find an algorithm for giving selected attributes in a formal concept analysis acc to given conditions
 a,arr= [],[]
 start,end = 3,4
-with open('Naive Algo/test1.txt') as file:
+with open('Naive Algo/Binary Representation/test1.txt') as file:
     for line in file:
         line = line.strip()
         for c in line:

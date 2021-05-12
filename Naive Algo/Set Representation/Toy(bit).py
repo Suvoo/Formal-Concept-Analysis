@@ -1,8 +1,8 @@
 # set representation to bit representation and then return answer
 
 a,arr= [],[]
-start,end = 81,85
-with open('Naive Algo\demo') as file:
+start,end = 3,4
+with open('Naive Algo\Set Representation\Toycontext(bit)') as file:
     for line in file:
         line = line.strip()
         for c in line:
@@ -12,6 +12,7 @@ with open('Naive Algo\demo') as file:
                 # print(a)
         arr.append(a)
         a = []
+print(arr)
 
 rows= arr[-1][0]
 cols=0
