@@ -1,7 +1,7 @@
 # set representation to bit representation and then return answer
 
 a,arr,temp= [],[],''
-start,end = 68,75
+start,end = 90,91
 with open('Naive Algo\Set Representation\mushroomContext') as file:
     for line in file:
         line = line.strip()
@@ -42,7 +42,7 @@ for st in range(start, end+1):
                 s.add(i + 1)
             #if j == end - 1 and arr[i][j] == 1:
                 #s.add(i + 1)
-print(s) # Gr
+# print(s) # Gr
 
 s1 = set()
 coun = 0
@@ -64,3 +64,16 @@ for r in range(start):
     coun = 0
     k = 0
 print(s1) #attributes
+
+f = open('Naive Algo\Set Representation\output', 'a')
+f.write('For ')
+f.write(str(start))
+f.write(' and ')
+f.write(str(end))
+f.write('\n\n')
+f.write('Gr is : \n\n')
+f.write(str(s))
+f.write('\n\n')
+f.write('The final attribute set is : \n\n')
+f.write(str(s1))
+f.close()
