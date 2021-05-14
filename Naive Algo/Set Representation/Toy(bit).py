@@ -1,5 +1,6 @@
 # set representation to bit representation and then return answer
 
+# to read input form file
 a,arr= [],[]
 start,end = 3,4
 with open('Naive Algo\Set Representation\Toycontext(bit)') as file:
@@ -12,8 +13,9 @@ with open('Naive Algo\Set Representation\Toycontext(bit)') as file:
                 # print(a)
         arr.append(a)
         a = []
-print(arr)
+# print(arr)
 
+# extract the size of the matrix of which binary representation had to be made
 rows= arr[-1][0]
 cols=0
 #print(arr[-1][0])
@@ -24,6 +26,7 @@ for i in range(len(arr)):
 # print(arr)
 # print(rows,cols)
 
+# store the binary representation of matrix in brr
 brr = [[0 for i in range(cols)] for j in range(rows)]
 # print(brr)
 for i in range(len(arr)):
@@ -35,6 +38,7 @@ for i in range(len(arr)):
     # print(brr[i])
 # print(brr) # bit representation now their
 
+# find and store Gr in a set s
 s = set()
 for st in range(start, end+1):
     for i in range(len(brr)):
@@ -49,6 +53,7 @@ s1 = set()
 coun = 0
 k = 0
 ans = 0
+# store the final list of attributes in a set s1
 for r in range(start):
     for i in range(len(brr)):
         for j in range(len(brr[i])):
