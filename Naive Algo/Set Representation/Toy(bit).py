@@ -35,7 +35,7 @@ for i in range(len(arr)):
         # print(t)
         # print(i,arr[i][j]-1)
         brr[i][arr[i][j] - 1] = 1
-    print(brr[i])
+    # print(brr[i])
 #print(brr) # bit representation now their
 
 # find and store Gr in a set s
