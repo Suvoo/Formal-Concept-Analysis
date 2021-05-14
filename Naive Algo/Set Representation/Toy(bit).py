@@ -35,8 +35,8 @@ for i in range(len(arr)):
         # print(t)
         # print(i,arr[i][j]-1)
         brr[i][arr[i][j] - 1] = 1
-    # print(brr[i])
-# print(brr) # bit representation now their
+    print(brr[i])
+#print(brr) # bit representation now their
 
 # find and store Gr in a set s
 s = set()
@@ -47,7 +47,7 @@ for st in range(start, end+1):
                 s.add(i + 1)
             #if j == end - 1 and arr[i][j] == 1:
                 #s.add(i + 1)
-print(s) # Gr
+print('Gr is',s) # Gr
 
 s1 = set()
 coun = 0
@@ -69,4 +69,4 @@ for r in range(start):
         s1.add(ans)
     coun = 0
     k = 0
-print(s1) #attributes
+print('Attributes are',s1) #attributes
