@@ -3,7 +3,7 @@
 # to read input form file
 a,arr= [],[]
 start,end = 3,4
-with open('Naive Algo\Set Representation\Toycontext(bit)') as file:
+with open('Naive Algo\Input\Toycontext(bit)') as file:
     for line in file:
         line = line.strip()
         for c in line:

@@ -2,7 +2,7 @@
 
 a,arr,temp= [],[],''
 start,end = 90,91
-with open('Naive Algo\Set Representation\mushroomContext') as file:
+with open('Naive Algo\Input\mushroomContext') as file:
     for line in file:
         line = line.strip()
         # print(line)
@@ -65,7 +65,7 @@ for r in range(start):
     k = 0
 print(s1) #attributes
 
-f = open('Naive Algo\Set Representation\output', 'a')
+f = open('Naive Algo\Output\output', 'a')
 f.write('For ')
 f.write(str(start))
 f.write(' and ')
