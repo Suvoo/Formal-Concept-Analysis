@@ -1,8 +1,8 @@
 # set representation to bit representation and then return answer
 
 a,arr= [],[]
-start,end = 76,80
-with open('Naive Algo\Input\mushroomContext') as file:
+start,end = 10,20
+with open('C:\\Users\\91865\\Desktop\\webdocs10') as file:
     for line in file:
         line = line.strip()
         new_line = line.replace('\t', ' ')
@@ -15,7 +15,7 @@ with open('Naive Algo\Input\mushroomContext') as file:
 # alter the array to store only attributes
 for i in range(len(arr)):
     arr[i] = arr[i][1:]
-    # print(arr[i])
+    #print(arr[i])
 
 # find and store Gr in a set s
 s = set()
@@ -23,8 +23,8 @@ for st in range(start, end+1):
     for i in range(len(arr)):
         if st in arr[i]:
             s.add(i+1)
-print('Gr is',s)
-
+# print('Gr is',s)
+ans = 0
 s1 = []
 coun1,coun2 = 0,0
 for r in range(start):
@@ -40,31 +40,4 @@ for r in range(start):
         print('new',coun1,coun2)
         s1.append(ans)
     coun1,coun2 = 0,0
-    # print(r)
 print('Attributes are',s1) #attributes
-
-# VERIFICATION
-s2 = set()
-for atrans in s1:
-    for i in range(len(arr)):
-        if atrans in arr[i]:
-            s2.add(i+1)
-# print('new gr is ',s2)
-flag = 0
-for i in s2:
-    if i in s: # is a subset
-        pass
-    else: # not a subset
-        flag = 1
-        break
-print('verify ans is ',flag) #if 0, then ANSWER is verified
-'''
-# to write to file
-f = open('Naive Algo\Output\Finop', 'a')
-f.write('For ')
-f.write(str(start))
-f.write(' and ')
-f.write(str(end))
-f.write('\n')
-f.write(str(s1))
-f.close()'''
