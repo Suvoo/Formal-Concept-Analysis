@@ -1,7 +1,7 @@
 # set representation to bit representation and then return answer
 
 a,arr= [],[]
-start,end = 10,20
+start,end = 10,12
 with open('C:\\Users\\91865\\Desktop\\webdocs10') as file:
     for line in file:
         line = line.strip()
@@ -35,9 +35,34 @@ for r in range(start):
                 coun2+=1
                 ans = r
                 # print('im here')
-    print(coun1,coun2)
+    # print(coun1,coun2)
     if coun1 == coun2 and coun1 !=0 and coun2 !=0:
-        print('new',coun1,coun2)
+        # print('new',coun1,coun2)
         s1.append(ans)
     coun1,coun2 = 0,0
 print('Attributes are',s1) #attributes
+
+# For Similarity,:
+s1dash = []
+for i in range(1,start):
+    s1dash.append(i)
+# print(s1dash)
+
+ansDict = {}
+grDash = []
+for atrans in s1dash:
+    for i in range(len(arr)):
+        if atrans in arr[i]:
+            grDash.append(i+1)
+    # print(grDash)
+    num = []
+    for gtrans in grDash:
+        if gtrans in s:
+            num.append(gtrans)
+    # print(len(num)/len(grDash))
+    ansDict[atrans] = len(num)/len(grDash)
+    grDash = []
+
+# print(ansDict)
+for i in ansDict:
+    print(i,ansDict[i])

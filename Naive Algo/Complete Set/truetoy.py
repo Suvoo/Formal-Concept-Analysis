@@ -46,8 +46,32 @@ for r in range(start):
             
 print('Attributes are',s1) #attributes
 
+# For Similarity,:
+s1dash = []
+for i in range(1,start):
+    s1dash.append(i)
+# print(s1dash)
+
+ansDict = {}
+grDash = []
+for atrans in s1dash:
+    for i in range(len(arr)):
+        if atrans in arr[i]:
+            grDash.append(i+1)
+    # print(grDash)
+    num = []
+    for gtrans in grDash:
+        if gtrans in s:
+            num.append(gtrans)
+    # print(len(num)/len(grDash))
+    ansDict[atrans] = len(num)/len(grDash)
+    grDash = []
+
+print(ansDict)
+
 # to verify
-'''s2 = set()
+'''
+s2 = set()
 for atrans in s1:
     for i in range(len(arr)):
         if atrans in arr[i]:
