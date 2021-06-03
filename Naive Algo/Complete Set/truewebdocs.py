@@ -1,7 +1,7 @@
 # set representation to bit representation and then return answer
 
 a,arr= [],[]
-start,end = 10,12
+start,end = 233,233
 with open('C:\\Users\\91865\\Desktop\\webdocs10') as file:
     for line in file:
         line = line.strip()
@@ -66,3 +66,7 @@ for atrans in s1dash:
 # print(ansDict)
 for i in ansDict:
     print(i,ansDict[i])
+
+# to write to file
+# f = open('Naive Algo\Output\Finop1', 'a')
+# f.write(str(ansDict))
