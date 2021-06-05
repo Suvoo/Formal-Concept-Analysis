@@ -1,7 +1,5 @@
-# set representation to bit representation and then return answer
-
 a,arr= [],[]
-start,end = 55,67
+start,end = 90,91
 with open('Naive Algo\Input\mushroomContext') as file:
     for line in file:
         line = line.strip()
@@ -41,7 +39,7 @@ for r in range(start):
         s1.append(ans)
     coun1,coun2 = 0,0
     # print(r)
-print('Attributes are',s1) #attributes
+# print('Attributes are',s1) #attributes
 
 # For Similarity,:
 s1dash = []
@@ -65,32 +63,23 @@ for atrans in s1dash:
     grDash = []
 
 # print(ansDict)
-for i in ansDict:
-    print(i,ansDict[i])
+print(len(ansDict))
 
-'''
-# VERIFICATION
-s2 = set()
-for atrans in s1:
-    for i in range(len(arr)):
-        if atrans in arr[i]:
-            s2.add(i+1)
-# print('new gr is ',s2)
-flag = 0
-for i in s2:
-    if i in s: # is a subset
-        pass
-    else: # not a subset
-        flag = 1
-        break
-print('verify ans is ',flag) #if 0, then ANSWER is verified
+
+
+# making the visualization function
+per = 0.95
+group_id = 2
+no_attr = 0
+for i in ansDict:
+    # print(i,ansDict[i])
+    if ansDict[i] >= per:
+        # print(i,ansDict[i])
+        no_attr+=1
+print(no_attr)
 
 # to write to file
-f = open('Naive Algo\Output\Finop', 'a')
-f.write('For ')
-f.write(str(start))
-f.write(' and ')
-f.write(str(end))
-f.write('\n')
-f.write(str(s1))
-f.close()'''
+f = open('Visualization/Output/mush.txt', 'a')
+f.write(str(no_attr))
+f.write(" ")
+
