@@ -2,7 +2,7 @@ threshold = 423089
 theta = 846041
 a,brr=[],[]
 ac=''
-with open('Thresholds\webdocs_Support') as file:
+with open('Thresholds\WebD\webdocs_Support') as file:
     for line in file:
         line = line.strip()
         line = line + ' '
@@ -23,6 +23,9 @@ with open('Thresholds\webdocs_Support') as file:
 # "Supp of the Att" "Att ID"
 
 # tindex is if arr[i][0] == threshold - unique for all
+# for i in range(len(brr)):
+#     if brr[i][0] == threshold:
+#         tindex = i
 arr = []
 tindex = 28
 for i in range(len(brr)):
@@ -47,6 +50,6 @@ for i in range(len(arr)-155,-1,-1): # minus lenght from rear
         ans.append(arr[i][1])
 print(ans)
 
-f = open('Thresholds/grWeb', 'a')
+f = open('Thresholds\WebD\grWeb.txt', 'a')
 f.write(str(ans))
 f.write(" ")
