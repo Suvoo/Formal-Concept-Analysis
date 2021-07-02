@@ -1,5 +1,9 @@
 threshold = 929794
 theta = 2500000
+# 1 mil
+# 3.75 mil
+# 5 mil
+
 a,brr=[],[]
 ac=''
 with open('Thresholds\SusyD\susy_support_att') as file:

@@ -1,18 +1,16 @@
-threshold = 423089
-theta = 846041 #50
-# 423089
-# 1269267
-# 1692356
+threshold = 929794
+theta = 1000000
+
 a,brr=[],[]
 ac=''
-with open('Thresholds\WebD\webdocs_Support') as file:
+with open('Thresholds\SusyD\susy_support_att') as file:
     for line in file:
         line = line.strip()
-        line = line + ' '
+        line = line + '\t'
 
-        if(line[0] != '"'):
+        if(line[0] != 'S'):
             for c in line:
-                if c != ' ':
+                if(c != '\t'):
                     ac = ac + c
                 else:
                     a.append(int(ac))
@@ -20,39 +18,35 @@ with open('Thresholds\WebD\webdocs_Support') as file:
                     ac=''
             brr.append(a)
             a=[]
-    
-
 # print(brr)
-# "Supp of the Att" "Att ID"
+brr.reverse()
 
-# tindex is if arr[i][0] == threshold - unique for all
-# for i in range(len(brr)):
-#     if brr[i][0] == threshold:
-#         tindex = i
 arr = []
-tindex = 28
+tindex = 15
 for i in range(len(brr)):
-    if i >= tindex:
+    if i>= tindex:
         arr.append(brr[i])
 # print(arr)
 
 sgr = 0
 ans = []
 
-begin = arr[77][0]
-to_append = arr[77][1]
+begin = arr[8][0]
+to_append = arr[8][1]
 
 ans.append(to_append)
 
-for i in range(len(arr)-155,-1,-1): # minus lenght from rear
+for i in range(len(arr)-92,-1,-1): # minus lenght from rear
     sgr = sgr + arr[i][0]
-    # print(sgr)
+
     if(sgr + begin >= theta):
         break
     else:
         ans.append(arr[i][1])
 print(ans)
+print(len(ans) - 1)
 
-f = open('Thresholds\WebD\grWeb.txt', 'a')
+f = open('Thresholds\SusyD\Susy25per\grSusy25.txt', 'a')
 f.write(str(ans))
 f.write(" ")
+        
