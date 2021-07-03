@@ -21,6 +21,12 @@ with open('Thresholds\SusyD\susy_support_att') as file:
 # print(brr)
 brr.reverse()
 
+# "Supp of the Att" "Att ID"
+
+# tindex is if arr[i][0] == threshold - unique for all
+# for i in range(len(brr)):
+#     if brr[i][0] == threshold:
+#         tindex = i
 arr = []
 tindex = 15
 for i in range(len(brr)):
@@ -30,23 +36,23 @@ for i in range(len(brr)):
 
 sgr = 0
 ans = []
+rear = 1
 
-begin = arr[8][0]
-to_append = arr[8][1]
+for i in range(41): # do unitl elements start repeating
+    begin = arr[i][0]
+    to_append = arr[i][1]
+    ans.append(to_append)
 
-ans.append(to_append)
+    for j in range(len(arr) - rear,-1,-1): # minus lenght from rear
+        sgr = sgr + arr[j][0]
 
-for i in range(len(arr)-92,-1,-1): # minus lenght from rear
-    sgr = sgr + arr[i][0]
+        if(sgr + begin >= theta):
+            rear += len(ans) - 1
+            break
+        else:
+            ans.append(arr[j][1])
+    print(ans)
+    ans = []
+    sgr = 0
 
-    if(sgr + begin >= theta):
-        break
-    else:
-        ans.append(arr[i][1])
-print(ans)
-print(len(ans) - 1)
-
-f = open('Thresholds\SusyD\Susy25per\grSusy25.txt', 'a')
-f.write(str(ans))
-f.write(" ")
-        
+# [124,124]
